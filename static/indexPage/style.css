@@ -161,6 +161,7 @@ span {
     grid-auto-flow: column;
     gap: 30px;
     margin: 0px 70px;
+    justify-content: center;
 }
 .feature-box {
     box-shadow: 4px 4px 10px #d1d9e6, -4px -4px 10px #f9f9f9;

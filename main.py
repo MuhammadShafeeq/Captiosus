@@ -112,13 +112,22 @@ def remove_task():
     print(f"Removed Task {taskId}")
     return {"Response": "Completed"}
 
+@app.route('/status/change', methods=["POST"])
+def status_change():
+    data = request.json
+    username = data['username']
+    taskId = data['taskid']
+    status = data['taskstatus']
+    Functions.update_status(username=username, taskId=taskId, choice=status)
+    return {"Response": "Completed"}
+
 
 @app.route('/journal/')
 def journal():
     if "User" in session:
         user = Functions.get_user(session['User']['Username'])
-        journal = session["User"]["journal"]
-        return render_template("journal/journal.html", user=user, journal=journal, url_for=url_for)
+        journal = user["journal"]
+        return render_template("journal/journal.html", user=user, journal=journal)
     else:
         return redirect(url_for('login'))
 

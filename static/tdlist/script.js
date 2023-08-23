@@ -8,7 +8,7 @@ function sendRequest(session) {
     var input = document.getElementById('taskname')
     var JsonData = {user: session, "taskname": input.value}
     if (input.value != '') {
-        fetch("http://127.0.0.1:5000/create" , {
+        fetch("/create" , {
             method: "POST",
             headers: {'Content-Type': "application/json"},
             body: JSON.stringify(JsonData)
@@ -31,7 +31,20 @@ async function sleep(seconds) {
 
 function remove(id, session, status) {
     var JsonData = {"username": session, "taskid": id, "taskstatus": status}
-    fetch("http://127.0.0.1:5000/remove" , {
+    fetch("/remove" , {
+        method: "POST",
+        headers: {'Content-Type': "application/json"},
+        body: JSON.stringify(JsonData)
+        }
+    ).then(res => res.json())
+     .then(data => console.log(data))
+     .then(error => console.log(error))
+     window.location.reload()
+}
+
+function changeStatus(id, session, status) {
+    var JsonData = {"username": session, "taskid": id, "taskstatus": status}
+    fetch("/status/change" , {
         method: "POST",
         headers: {'Content-Type': "application/json"},
         body: JSON.stringify(JsonData)

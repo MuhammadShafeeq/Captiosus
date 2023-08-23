@@ -3,7 +3,7 @@ var submit = document.getElementById('submit')
 function sendData() {
     var textbox = document.getElementById('body')
     var title = document.getElementById('title')
-    ttitle = title.value
+    ttitle = title.value 
     body = textbox.value
     var JsonData = {"title": ttitle, "body": body, "type": "journal-entry"}
     fetch("#" , {
@@ -16,7 +16,11 @@ function sendData() {
      .then(error => console.error(error))
     title.value = ""
     textbox.value = ""
-    window.location.replace('http://127.0.0.1:5000/journal/')
+    window.location.replace('/journal/')
 }
 
 submit.addEventListener('click', sendData)
+
+function addEntry() {
+    window.location.replace('/journal/new/entry')
+}

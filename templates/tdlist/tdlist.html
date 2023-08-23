@@ -1,9 +1,10 @@
 {% extends 'btemplate/base.html' %}
+{% block page_title %}To Do List - Captiosus{% endblock %}
 {% block links %}
     <link rel="stylesheet" href="{{ url_for('static', filename='dashboard/index.css') }}">    
     <link rel="stylesheet" href="{{ url_for('static', filename='tdlist/style.css') }}">
 {% endblock %}
-{% block title %}Organize{% endblock %}
+{% block title %}To Do List{% endblock %}
 {% block path1 %}Organize{% endblock%}
 {% block path2 %}To Do List{% endblock%}
 {% block op2 %}active{% endblock %}
@@ -22,10 +23,10 @@
                         <div class="icon">
                             <i class="bx bx-x" onclick="remove({{ tdlist[i]['id'] }}, '{{ session['Username'] }}', '{{ tdlist[i]['Status'] }}')"></i>
                             {% if tdlist[i]['Status'] != "complete" %}
-                            <i class='bx bx-check' name="{{ tdlist[i]['id'] }}"></i>
+                            <i class='bx bx-check' name="{{ tdlist[i]['id'] }}" onclick="changeStatus({{ tdlist[i]['id'] }}, '{{ session['Username'] }}', 1 )"></i>
                             {% endif %}
                             {% if tdlist[i]['Status'] != "delayed" %}
-                            <i class='bx bxs-timer' name="{{ tdlist[i]['id'] }}" ></i>
+                            <i class='bx bxs-timer' name="{{ tdlist[i]['id'] }}" onclick="changeStatus({{ tdlist[i]['id'] }}, '{{ session['Username'] }}', 3 )"></i>
                             {% endif %}
                         </div>
                     </div>

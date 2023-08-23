@@ -1,12 +1,36 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Journal</title>
-</head>
-<body>
-    {% for i in journal %}
-        <a href="{{ url_for('content_journal', day=i) }}"><button><h1>{{ i }}</h1></button></a>
-    {% endfor %}
-</body>
-</html>
+{% extends 'btemplate/base.html' %}
+{% block page_title %}Journal - Captiosus{% endblock %}
+{% block title %}Daily Journal{% endblock %}
+{% block path1 %}Organize{% endblock%}
+{% block path2 %}Journal{% endblock%}
+{% block links %}
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon">
+    <link rel="stylesheet" href="{{ url_for('static', filename='journal/style.css') }}">
+{% endblock %}
+{% block op2 %}active{% endblock%}
+{% block body %}
+    <section id="journal">
+        <div class="outer-container-journal">
+            <div class="heading">
+                <h2 id="heading">Journal Dates</h2>
+            </div>
+            <div class="journal-dates">
+                <ul id="journal-dates">
+                    {% for i in journal %}
+                        <li class="journal-date">
+                            <a href="">
+                                {{ i }}
+                            </a>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+            <div class="add-entry">
+                <input type="button" id="add-entry" value="Add Entry" onclick="addEntry()">
+            </div>
+        </div>
+    </section>
+{% endblock %}
+{% block js %}
+    <script src="{{ url_for('static', filename='journal/script.js') }}"></script>
+{% endblock %}

@@ -4,12 +4,12 @@ function send_req () {
     var username = document.getElementById('username')
     var password = document.getElementById('password')
     var JsonData = {"username": username, "password": password, "perma_session": "false"}
-    fetch("http://127.0.0.1:5000/login" , {
+    fetch("/login" , {
         method: "POST",
         headers: {'Content-Type': "application/json"},
         body: JSON.stringify(JsonData)
         }
-    ).then(res => window.location.replace('http://127.0.0.1:5000/'))
+    ).then(res => console.log(res))
     .then(data => console.log(data))
     .then(error => console.log(error))
 }

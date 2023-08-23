@@ -17,11 +17,31 @@ def get_random_id(char = 10):
         if idChrCtr == 10:
             return int(taskiid)
 
+
+def date_convert(date):
+    months = [
+        'January',
+        'February',
+        'March',
+        'April',
+        'May',
+        'June',
+        'July',
+        'August',
+        'September',
+        'October',
+        'November',
+        'December'
+    ]
+    omonth = int(date.split('-')[1])
+    nmonth = months[omonth-1]
+    new_date = date.replace(date.split('-')[1], nmonth)
+    return new_date
+
 # NEEDS TO BE UPDATED TO OBJECT ORIENTATED PROGRAMMING
 class Functions:
     def __init__(self):
         return
-
     def register(username, password, name):
         username = username.lower()
         with open('data.json', 'r') as f:
@@ -86,9 +106,6 @@ class Functions:
                     break
             if found:
                 break
-
-
-
         users[username]["tdList"][taskName] = {}
         users[username]["tdList"][taskName]["id"] = int(taskId)
         users[username]["tdList"][taskName]["primaryKey"] = ctr
@@ -181,12 +198,11 @@ class Functions:
         day = date_creation.day
         month = date_creation.month
         year = date_creation.year
-        date1 = f"{day}:{month}:{year}"
+        date12 = f"{day}-{month}-{year}"
         hour = time_creation.hour
         minute = time_creation.minute
-        time1 = f"{hour}:{minute}-D-{date1}"
-        print(time1)
-        print(date1)
+        time1 = f"{hour}:{minute}-D-{date12}"
+        date1 = date_convert(date12)
         with open('data.json', 'r') as f:
             users = json.load(f)
         ctr = 1

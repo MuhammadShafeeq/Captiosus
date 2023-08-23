@@ -45,4 +45,6 @@ input[type='text'] {
 }
 #taskname {
     width: 89%;
+    border: 0.5px solid var(--dark);
+
 }
