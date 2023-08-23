@@ -1,0 +1,140 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Titillium+Web:wght@200;300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
+
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* All variables are assigned in this to be accessed later */
+:root {
+    --submit-btn-background: #0089a6;
+    --background: #fff;
+    --shadow-background: #000000;
+    --box-background: #ddd;
+    --font-text: 'Montserrat', sans-serif;
+    --font-heading: 'Poppins', sans-serif;
+    --link-background: #999;
+    --font-for-links: 'Titillium Web', sans-serif;
+    --font-color: #000;
+    --hover-link-bg: #7d7b7b;
+}
+
+a {
+    text-decoration: none;
+    color: var(--link-background);
+    font-family: var(--font-for-links);
+    transition: color 0.3s ease-in-out;
+}
+
+a:hover {
+    color: var(--hover-link-bg);
+}
+
+input {
+    outline: none;
+    border: none;
+    color: #484747;
+}
+
+input[type="submit"] {
+    font-size: 20px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    background: var(--submit-btn-background);
+    width: 40%;
+    height: 40px;
+    border-radius: 5px;
+    color: white;
+    transition: color 0.3s ease, background 0.3s ease;
+}
+
+
+input[type="submit"]:hover {
+    background: #fff;
+    color: var(--submit-btn-background);
+}
+
+body {
+    box-sizing: border-box;
+}
+
+.outermost-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--background);
+    height: 100vh;
+}
+
+.outer-container {
+    box-shadow: 4px 4px 10px #d1d9e6, -4px -4px 10px #f9f9f9;
+    height: 390px;
+    width: 630px;
+    background: var(--box-background);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+    flex-direction: column;
+}
+
+.heading-container {
+    margin: 30px 0px 30px 0px;
+}
+
+#heading-main{
+    font-family: var(--font-heading);
+    color: #000000;
+}
+
+.outer-inner-container {
+    width: 85%;
+    display: grid;
+    gap: 3%;
+    grid-auto-flow: column;
+}
+
+.input-column {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-bottom: 20px;
+}
+
+label h6{
+    color: var(--font-color);
+    font-size: 15px;
+    font-family: var(--font-text);
+}
+
+.input-column input{
+    height: 40px;
+    width: 95%;
+    border-radius: 3px;
+    margin-top: 5px;
+    padding-left: 10px;
+    background: var(--background);
+}
+
+.related-links {
+    margin-top: -10px;
+    margin-left: 13%;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: flex-start;
+    position: relative;
+    left: 12px;
+    top: 10px;
+    font-size: 13px;
+}
+
+.submit-btn-container {
+    margin: 10px 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}

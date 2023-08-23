@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block page_title %}Dashboard - Captiosus!{% endblock %}</title>
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon">
+    <link rel="stylesheet" href="{{ url_for('static', filename='dashboard/style.css')}}">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    {% block links %}{% endblock %}
+</head>
+<body>
+    <section id="sidebar">
+        <div class="brand" id="branded">
+            <span id="brand">Captiosus</span>
+        </div>
+
+        <ul class="side-bar-menu first">
+            <li class="{% block op1 %}{% endblock %}">
+                <a href="/dashboard">
+                    <i class='bx bxs-dashboard' ></i>
+                    <span class="side-menu-option">Dashboard</span>
+                </a>
+            </li>
+            <li class="{% block op2 %}{% endblock %}">
+                <a href="/organize">
+                    <i class='bx bx-clipboard'></i>
+                    <span class="side-menu-option">Organize</span>
+                </a>
+            </li>
+            <li class="{% block op3 %}{% endblock %}">
+                <a href="#">
+                    <i class='bx bxs-book-open' ></i>
+                    <span class="side-menu-option">Studies</span>
+                </a>
+            </li>
+            <li class="{% block op4 %}{% endblock %}">
+                <a href="#">
+                    <i class='bx bxs-slideshow' ></i>
+                    <span class="side-menu-option">Tutorials</span>
+                </a>
+            </li>
+            <li class="{% block op5 %}{% endblock %}">
+                <a href="#">
+                    <i class='bx bxs-group' ></i>
+                    <span class="side-menu-option">Friends</span>
+                </a>
+            </li>
+        </ul>
+        <ul class="side-bar-menu">
+            <li class="{% block op6 %}{% endblock %}">
+                <a href="#">
+                    <i class='bx bxs-cog' ></i>
+                    <span class="side-menu-option">Settings</span>
+                </a>
+            </li>
+            <li class="{% block op7 %}{% endblock %}">
+                <a href="#" class="help">
+                    <i class='bx bxs-help-circle'></i>
+                    <span class="side-menu-option">Help</span>
+                </a>
+            </li>
+            <li>
+                <a href="{{ url_for('logout') }}" class="logout">
+                    <i class='bx bxs-exit' ></i>
+                    <span class="side-menu-option">Logout</span>
+                </a>
+            </li>
+        </ul>
+    </section>
+    <section id="body">
+        <nav>
+            <i class='bx bx-menu' ></i>
+            <div class="acquire-space"></div>
+            <a href="#" class="profile">
+                <img id="pfp"  src="{{ url_for('static', filename='indexPage/background.png')}}" alt="">
+            </a>
+        </nav>
+        <main>
+            <div class="head-title">
+                <div class="left">
+                    <h1>{% block title %}Dashboard{% endblock %}</h1>
+                    <ul class="breadcrumb">
+                        <li>
+                            <a href="#">{% block path1 %}Dashboard{% endblock%}</a>
+                        </li>
+                        <li><i class="bx bx-chevron-right"></i></li>
+                        <li>
+                            <a href="#" class="active">{% block path2 %}Home{% endblock%}</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            {% block body %}{% endblock %}
+        </main>
+    </section>
+    <script src="{{ url_for('static', filename='dashboard/script.js')}}"></script>
+    {% block js %}{% endblock %}
+</body>
+</html>

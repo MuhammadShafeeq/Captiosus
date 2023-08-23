@@ -1,0 +1,62 @@
+
+:root {
+    --blue: #0089a6;
+    --secondary-blue: #3C91E6;
+    --grey: #eee;
+    --dark-grey: #aaa;
+    --dark: #342E37;
+    --red: #DB504A;
+    --yellow: rgb(176, 176, 13);
+}
+
+.bx-x {
+    color: rgb(228, 0, 0);
+    cursor: pointer;
+}
+.bx-check {
+    color: rgb(0, 228, 11);
+    cursor: pointer;
+}
+
+#to-do-list {
+    margin-top: 20px;
+    background: #fff;
+    border-radius: 30px;
+}
+#to-do-list .to-do-list {
+    padding: 20px;
+}
+#to-do-list .to-do-list .todo-container .top-section{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+#to-do-list .to-do-list .todo-container .to-do-ul {
+    padding: 20px;
+}
+#to-do-list .to-do-list .todo-container .to-do-ul li {
+    height: 45px;
+    border-left: 7px #000 solid;
+    background: var(--grey);
+    margin: 10px;
+    border-radius: 5px;
+    color: var(--dark);
+}
+#to-do-list .to-do-list .todo-container .to-do-ul li .to-do-box {
+    padding: 10px;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-weight: 400;
+    font-family: 'Montserrat';
+    transition: background 0.3s ease;
+}
+#to-do-list .to-do-list .todo-container .to-do-ul  li a{
+    color: var(--dark);
+    width: 100%;
+}
+#to-do-list .to-do-list .todo-container .to-do-ul  li a .to-do-box:hover {
+    background: #dfdfdf;
+}

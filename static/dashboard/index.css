@@ -1,0 +1,66 @@
+.bx-x {
+    color: rgb(228, 0, 0);
+    cursor: pointer;
+}
+.bx-check {
+    color: rgb(0, 228, 11);
+    cursor: pointer;
+}
+.bxs-timer {
+    color: rgb(228, 205, 0);
+    cursor: pointer;
+}
+
+:root {
+    --blue: #0089a6;
+    --secondary-blue: #3C91E6;
+    --grey: #eee;
+    --dark-grey: #aaa;
+    --dark: #342E37;
+    --red: #DB504A;
+    --yellow: rgb(176, 176, 13);
+}
+
+#to-do-list {
+    margin-top: 20px;
+    background: #fff;
+    border-radius: 30px;
+}
+#to-do-list .to-do-list {
+    padding: 20px;
+}
+#to-do-list .to-do-list .todo-container .top-section{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+#to-do-list .to-do-list .todo-container .to-do-ul {
+    padding: 20px;
+}
+#to-do-list .to-do-list .todo-container .to-do-ul li {
+    height: 45px;
+    border-left: 7px #000 solid;
+    background: var(--grey);
+    margin: 10px;
+    border-radius: 5px;
+    color: var(--dark);
+}
+#to-do-list .to-do-list .todo-container .to-do-ul li .to-do-box {
+    padding: 10px;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-weight: 400;
+    font-family: 'Montserrat';
+}
+#to-do-list .to-do-list .todo-container .to-do-ul .incomplete {
+    border-left: 7px rgb(228, 0, 0) solid;
+}
+#to-do-list .to-do-list .todo-container .to-do-ul .complete {
+    border-left: 7px rgb(0, 228, 11) solid;
+}
+#to-do-list .to-do-list .todo-container .to-do-ul .delayed {
+    border-left: 7px rgb(228, 175, 0) solid;
+}

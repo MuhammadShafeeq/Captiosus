@@ -1,0 +1,38 @@
+{% extends 'btemplate/base.html' %}
+{% block links %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='dashboard/index.css') }}">
+{% endblock %}
+{% block op1 %}active{% endblock%}
+{% block body %}
+<section id=""></section>
+{% if tdlist != {} %}
+<section id="to-do-list">
+    <div class="to-do-list">
+        <div class="todo-container">
+            <div class="top-section">
+                <h2>To Do List</h2>
+                <a href=""><i class='bx bxs-edit'></i></a>
+            </div>
+            <ul class="to-do-ul">
+                {% for i in tdlist %}
+                <li class="{{ tdlist[i]['Status'] }}">
+                    <div class="to-do-box">
+                        <h4 class="to-do-heading">{{ i }}</h4>
+                        <div class="icon">
+                            <i class="bx bx-x"></i>
+                            {% if tdlist[i]['Status'] != "complete" %}
+                            <i class='bx bx-check'></i>
+                            {% endif %}
+                            {% if tdlist[i]['Status'] != "delayed" %}
+                            <i class='bx bxs-timer' ></i>
+                            {% endif %}
+                        </div>
+                    </div>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</section>
+{% endif %}
+{% endblock %}

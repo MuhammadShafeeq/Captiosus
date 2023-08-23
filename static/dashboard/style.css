@@ -1,0 +1,200 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Mono+One&display=swap');
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+a, li {
+    list-style: none;
+    text-decoration: none;
+}
+
+
+:root {
+    --blue: #0089a6;
+    --secondary-blue: #3C91E6;
+    --grey: #eee;
+    --dark-grey: #aaa;
+    --dark: #342E37;
+    --red: #DB504A;
+    --yellow: rgb(176, 176, 13);
+}
+
+body {
+    background: var(--grey);
+    overflow-x: hidden;
+}
+
+
+#sidebar {
+    background: #fff;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 280px;
+    z-index: 10;
+    font-family: 'poppins', sans-serif;
+    transition: width 0.3s ease;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+#sidebar.hide {
+    width: 60px;
+    overflow: hidden;
+}
+#sidebar .brand {
+    height: 54px;
+    font-size: 24px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--blue);
+    transition: color 0.3s ease;
+}
+#sidebar .branded {
+    background: #79afc8;
+    border-radius: 10px;
+    margin: 5px 5px 0px 5px;
+}
+#sidebar .side-bar-menu {
+    width: 100%;
+    margin-top: 45px;
+}
+#sidebar .side-bar-menu li {
+    background: transparent;
+    height: 48px;
+    margin-left: 6px;
+    border-radius: 48px 0 0 48px;
+    padding: 4px;
+}
+#sidebar .side-bar-menu li.active {
+    background: var(--grey);
+    position: relative;
+}
+#sidebar.hide .first li.active a {
+    color: var(--blue);
+}
+#sidebar.hide .side-bar-menu li a {
+    width: 40px;
+}
+#sidebar .side-bar-menu li.active::before {
+    content: '';
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    top: -40px;
+    right: 0;
+    box-shadow: 20px 20px 0 var(--grey);
+    z-index: -1;
+}
+#sidebar .side-bar-menu li.active::after {
+    content: '';
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    bottom: -40px;
+    right: 0;
+    box-shadow: 20px -20px 0 var(--grey);
+    z-index: -1;
+}
+#sidebar .side-bar-menu li a {
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    border-radius: 48px;
+    color: var(--dark);
+    white-space: nowrap;
+    overflow-x: hidden;
+}
+#sidebar .side-bar-menu li a.logout {
+    color: var(--red);
+}
+#sidebar .side-bar-menu li a.help {
+    color: var(--yellow);
+}
+#sidebar .side-bar-menu.first li a:hover {
+    color: var(--blue);
+}
+#sidebar .side-bar-menu li a .bx {
+    min-width: 40px;
+    display: flex;
+    justify-content: center;
+}
+
+
+#body {
+    position: relative;
+    width: calc(100% - 280px);
+    left: 280px;
+}
+#sidebar.hide ~ #body {
+    width: calc(100% - 60px);
+    left: 60px;
+}
+#body nav {
+    height: 56px;
+    background: #fff;
+    padding: 0 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    grid-gap: 24px;
+    position: sticky;
+    top: 0;
+}
+#body nav::before {
+    content: '';
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    bottom: -40px;
+    left: 0;
+    border-radius: 50%;
+    box-shadow: -20px -20px 0 #fff;
+}
+#body nav .bx.bx-menu {
+    cursor: pointer;
+}
+#body nav .profile img {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+#body main {
+    width: 100%;
+    padding: 36px 24px;
+    font-family: 'Poppins', sans-serif;
+
+}
+#body main .head-title {
+    display: flex;
+    align-items: center;
+}
+#body main .head-title .left h1 {
+    font-size: 36px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: var(--dark);
+}
+#body main .head-title .left .breadcrumb {
+    display: flex;
+    align-items: center;
+    grid-gap: 16px;
+}
+#body main .head-title .left .breadcrumb li a {
+    color: var(--dark-grey);
+}
+#body main .head-title .left .breadcrumb li a.active {
+    color: var(--blue)
+}

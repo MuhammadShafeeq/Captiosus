@@ -1,0 +1,49 @@
+{% extends 'btemplate/base.html' %}
+{% block links %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='dashboard/index.css') }}">    
+    <link rel="stylesheet" href="{{ url_for('static', filename='tdlist/style.css') }}">
+{% endblock %}
+{% block title %}Organize{% endblock %}
+{% block path1 %}Organize{% endblock%}
+{% block path2 %}To Do List{% endblock%}
+{% block op2 %}active{% endblock %}
+{% block body %}
+<section id="to-do-list">
+    <div class="to-do-list">
+        <div class="todo-container">
+            <div class="top-section">
+                <h2>To Do List</h2>
+            </div>
+            <ul class="to-do-ul">
+                {% for i in tdlist %}
+                <li class="{{ tdlist[i]['Status'] }}">
+                    <div class="to-do-box">
+                        <h4 class="to-do-heading">{{ i }}</h4>
+                        <div class="icon">
+                            <i class="bx bx-x" onclick="remove({{ tdlist[i]['id'] }}, '{{ session['Username'] }}', '{{ tdlist[i]['Status'] }}')"></i>
+                            {% if tdlist[i]['Status'] != "complete" %}
+                            <i class='bx bx-check' name="{{ tdlist[i]['id'] }}"></i>
+                            {% endif %}
+                            {% if tdlist[i]['Status'] != "delayed" %}
+                            <i class='bx bxs-timer' name="{{ tdlist[i]['id'] }}" ></i>
+                            {% endif %}
+                        </div>
+                    </div>
+                </li>
+                {% endfor %}
+            </ul>
+            <div class="add-task">
+                <input type="text" name="taskname" id="taskname">
+                <button id="submit" onclick="sendRequest('{{ session['Username'] }}')">Submit</button>
+            </div>
+            <div class="error-messages hidden" id="error-division">
+                <i class='bx bxs-error-circle'></i>
+                <span id="error-span"></span>
+            </div>
+        </div>
+    </div>
+</section>
+{% block js %}
+    <script src="{{ url_for('static', filename='tdlist/script.js') }}"></script>
+{% endblock %}
+{% endblock %}

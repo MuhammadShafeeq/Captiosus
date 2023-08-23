@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon">
+    <link rel="stylesheet" href="{{ url_for('static', filename='user-system/register/style.css') }}">
+    <title>Login Page - Captiosus - Work Smart</title>
+</head>
+<body>
+    <div class="outermost-container">
+        <div class="outer-container">
+            <div class="heading-container">
+                <h1 id="heading-main">Captiosus</h1>
+            </div>
+            <div class="outer-inner-container">
+                <div class="right-column-container">
+                    <div class="username-column input-column">
+                        <label for="username"><h6>Username: </h6></label>
+                        <input type="text" name="username" id="username" placeholder='Enter Username ' autocomplete="off">
+                        <div class="error-messages hidden" id="error-division-username">
+                            <i class='bx bxs-error-circle'></i>
+                            <span id="error-span"></span>
+                        </div>
+                    </div>
+                    <div class="password-column input-column left-column">
+                        <label for="name"><h6>Name: </h6></label>                
+                        <input type="text" name="name" id="name" placeholder="Enter Name " autocomplete="off">
+                        <div class="error-messages hidden" id="error-division-name">
+                            <i class='bx bxs-error-circle'></i>
+                            <span id="error-span"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="left-column-container">
+                    <div class="email-column input-column">
+                        <label for="email"><h6>Email: </h6></label>
+                        <input type="email" name="email" id="email" placeholder='Enter Email ' autocomplete="off">
+                        <div class="error-messages hidden" id="error-division-email">
+                            <i class='bx bxs-error-circle'></i>
+                            <span id="error-span"></span>
+                        </div>
+                    </div>
+                    <div class="password-column input-column left-column">
+                        <label for="password"><h6>Password: </h6></label>                
+                        <input type="password" name="password" id="password" placeholder="Enter Password " autocomplete="off">
+                        <div class="error-messages hidden" id="error-division-password">
+                            <i class='bx bxs-error-circle'></i>
+                            <span id="error-span"></span>
+                        </div>                    
+                    </div>
+                </div>
+            </div>
+            <div class="submit-btn-container">
+                <input type="submit" id="submit" value="Register" onclick="actionRegister()">
+            </div>
+            <div class="related-links">
+                <a href="#">Don't have an account? Create one!</a>
+                <a href="#">Forgot Password</a>
+            </div>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='user-system/register/script.js') }}"></script>
+</body>
+</html>

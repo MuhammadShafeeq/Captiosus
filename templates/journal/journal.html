@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Journal</title>
+</head>
+<body>
+    {% for i in journal %}
+        <a href="{{ url_for('content_journal', day=i) }}"><button><h1>{{ i }}</h1></button></a>
+    {% endfor %}
+</body>
+</html>
