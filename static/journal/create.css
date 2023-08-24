@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,300&display=swap');
+
+textarea, input[type="text"] {
+    outline: none;
+    border: 1px #c9c9c9 solid;
+    width: 100%;
+    font-size: 20px;
+    border-radius: 5px;
+    padding: 10px;
+    font-family: 'Nunito Sans', sans-serif;
+}
+textarea {
+    resize: none;
+}
+#journal {
+    margin-top: 20px;
+    background: #fff;
+    border-radius: 30px; 
+}
+#journal .outer-container-journal {
+    padding: 20px;
+}
+#journal .outer-container-journal .form-container {
+    margin: 20px;
+}
+#journal .outer-container-journal .form-container h4 {
+    font-family: 'montserrat';
+    font-size: 20px;
+    margin: 20px 0px;
+}
+#journal .outer-container-journal .form-container textarea {
+    height: 400px;
+}
+#journal .outer-container-journal .form-container .submit {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#submit {
+    margin-top: 20px;
+    border: none;
+    background-color: #0089a6;
+    width: 80px;
+    height: 35px;
+    border-radius: 10px;
+    outline: none;
+    color: #fff;
+    font-size: 15px;
+    font-weight: 600;
+    font-family: 'Poppins', sans-serif;
+    transition: color ease-in-out 0.3s, background-color ease-in-out 0.3s, box-shadow ease 0.3s;
+}
+#submit:hover {
+    cursor: pointer;
+    background-color: #fff;
+    color: #0089a6;
+    box-shadow: 4px 4px 10px #d1d9e6, -4px -4px 10px #f9f9f9;
+}
+.error-message {
+    display: flex;
+    align-items: center;
+    grid-gap: 3px;
+    color: var(--red);
+    margin-top: 4px;
+    font-size: 12px;
+}
+.hidden {
+    display: none;
+}

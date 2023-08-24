@@ -1,13 +1,46 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Create Entry - Journal</title>
-</head>
-<body>
-    Title: <input type="text" name="title" id="title">
-    Body: <textarea name="body" id="body" cols="30" rows="10"></textarea>
-    <input type="submit" value="submit" id="submit">
+{% extends 'btemplate/base.html' %}
+{% block page_title %}Add Journal Entry - Captiosus{% endblock %}
+{% block title %}Add Entry{% endblock %}
+{% block path1 %}<a href="/journal">Journal</a>{% endblock%}
+{% block path2 %}Add Entry{% endblock%}
+{% block links %}
+
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon">
+    <link rel="stylesheet" href="{{ url_for('static', filename='journal/create.css') }}">
+{% endblock %}
+{% block op2 %}active{% endblock%}
+{% block body %}
+    <section id="journal">
+        <div class="outer-container-journal">
+            <div class="heading">
+                <h2 id="heading">Journal Dates</h2>
+            </div>
+            <div class="form-container">
+                <div class="form">
+                    <div class="title">
+                        <h4>Title: </h4>
+                        <input type="text" name="title" id="title">
+                        <div id="error-division-title" class="error-message hidden">
+                            <i class='bx bxs-error-circle'></i>
+                            <span id="error-message-title"></span>
+                        </div>
+                    </div>
+                    <div class="body">
+                        <h4>Body: </h4>
+                        <textarea name="body" id="textareabody"></textarea>
+                        <div class="error-message hidden" id="error-division-body">
+                            <i class='bx bxs-error-circle'></i>
+                            <span id="error-message-body"></span>
+                        </div>
+                    </div>
+                    <div class="submit">
+                        <input type="submit" value="Submit" id="submit">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}
+{% block js %}
     <script src="{{ url_for('static', filename='journal/script.js') }}"></script>
-</body>
-</html>
+{% endblock %}

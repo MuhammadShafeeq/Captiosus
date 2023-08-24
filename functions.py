@@ -192,7 +192,7 @@ class Functions:
             return False
 
     def create_journal_entry(username, entry, title):
-        username = username.lower()
+        username = username["Username"].lower()
         date_creation = datetime.today().date()
         time_creation = datetime.today()
         day = date_creation.day
@@ -205,7 +205,7 @@ class Functions:
         date1 = date_convert(date12)
         with open('data.json', 'r') as f:
             users = json.load(f)
-        ctr = 1
+        ctr = 0
         for i in users[username]["journal"]:
             ctr += 1
         if date1 not in users[username]["journal"]:
@@ -214,6 +214,5 @@ class Functions:
         users[username]["journal"][date1][title]["id"] = ctr
         users[username]["journal"][date1][title]["entry"] = entry
         users[username]["journal"][date1][title]["timeCreation"] = time1
-
         with open('data.json', 'w') as f:
             json.dump(users, f, indent=4)

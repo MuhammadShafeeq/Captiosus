@@ -1,7 +1,7 @@
 {% extends 'btemplate/base.html' %}
 {% block page_title %}Journal - Captiosus{% endblock %}
 {% block title %}Daily Journal{% endblock %}
-{% block path1 %}Organize{% endblock%}
+{% block path1 %}<a href="/organize">Organize</a>{% endblock%}
 {% block path2 %}Journal{% endblock%}
 {% block links %}
     <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon">
@@ -18,7 +18,7 @@
                 <ul id="journal-dates">
                     {% for i in journal %}
                         <li class="journal-date">
-                            <a href="">
+                            <a href="/journal/{{ i }}">
                                 {{ i }}
                             </a>
                         </li>

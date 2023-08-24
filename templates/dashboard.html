@@ -11,7 +11,7 @@
         <div class="todo-container">
             <div class="top-section">
                 <h2>To Do List</h2>
-                <a href=""><i class='bx bxs-edit'></i></a>
+                <a href="/organize/tdlist"><i class='bx bxs-edit'></i></a>
             </div>
             <ul class="to-do-ul">
                 {% for i in tdlist %}
@@ -19,12 +19,12 @@
                     <div class="to-do-box">
                         <h4 class="to-do-heading">{{ i }}</h4>
                         <div class="icon">
-                            <i class="bx bx-x"></i>
+                            <i class="bx bx-x" onclick="remove({{ tdlist[i]['id'] }}, '{{ user['Username'] }}', '{{ tdlist[i]['Status'] }}')"></i>
                             {% if tdlist[i]['Status'] != "complete" %}
-                            <i class='bx bx-check'></i>
+                            <i class='bx bx-check' name="{{ tdlist[i]['id'] }}" onclick="changeStatus({{ tdlist[i]['id'] }}, '{{ user['Username'] }}', 1 )"></i>
                             {% endif %}
                             {% if tdlist[i]['Status'] != "delayed" %}
-                            <i class='bx bxs-timer' ></i>
+                            <i class='bx bxs-timer' name="{{ tdlist[i]['id'] }}" onclick="changeStatus({{ tdlist[i]['id'] }}, '{{ user['Username'] }}', 3 )"></i>
                             {% endif %}
                         </div>
                     </div>
@@ -35,4 +35,7 @@
     </div>
 </section>
 {% endif %}
+{% block js %}
+    <script src="{{ url_for('static', filename='tdlist/script.js') }}"></script>
+{% endblock %}
 {% endblock %}

@@ -146,12 +146,13 @@ def content_journal(day):
             return "No"
 
 
-@app.route('/journal/<user>/entry/create', methods=["GET", "POST"])
-def create_entry(user):
+@app.route('/journal/entry/create', methods=["GET", "POST"])
+def create_entry():
     if "User" not in session:
         flash("Log in first", "info")
         return redirect(url_for('login'))
     else:
+        user = Functions.get_user(session["User"]["Username"])
         if request.method == "POST":
             if request.json['type'] == "journal-entry":
                 title = request.json['title']
