@@ -2,6 +2,10 @@ import csv
 import json
 from datetime import datetime, timedelta, date
 import random
+import schedule
+
+
+daily_quote = {"Author": "A.P.J Abdul Kalam", "Quote": "A dream is something that keeps you awake"}
 
 def default(o):
     if isinstance(o, (date, datetime)):

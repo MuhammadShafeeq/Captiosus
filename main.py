@@ -1,12 +1,31 @@
-from flask import Flask, render_template, request, session, flash, redirect, url_for
-from functions import Functions
-from datetime import timedelta
+import csv
 import json
+import random
+from flask_apscheduler import APScheduler
+from datetime import timedelta
+from flask import Flask, render_template, request, session, flash, redirect, url_for
+from functions import Functions,daily_quote
+
 
 app = Flask(__name__)
 app.secret_key = "IUhoUqojdJWAMKXSqddsoijfozmclkm1wafjwpaiojgubh"
 app.permanent_session_lifetime = timedelta(hours=8)
+schedule = APScheduler()
 
+def choose_quote():
+    print("Hey!!!!")
+    with open('quotes.csv', 'r') as f:
+        reader = csv.DictReader(f)
+        csvData = list(reader)
+    daily_quote = random.choice(csvData)
+    with open('tquote.csv', 'w') as f:
+        fieldnames= ["Author", "Quote"]
+        writer = csv.DictWriter(f,fieldnames=fieldnames)
+        writer.writeheader()
+        writer.writerow(daily_quote)
+    return daily_quote
+
+daily_quote
 @app.route('/')
 def index():
     return render_template('index.html')
@@ -76,9 +95,13 @@ def dashboard():
         flash("Log in first", "info")
         return redirect(url_for('login'))
     else:
+        with open('tquote.csv', 'r') as f:
+            reader = csv.DictReader(f)
+            csvData = list(reader)
+        daily_quote = random.choice(csvData)
         user = Functions.get_user(session['User']['Username'])
         tdlist = Functions.get_tdlist(username=user['Username'])
-        return render_template('dashboard.html', user=user, tdlist=tdlist)
+        return render_template('dashboard.html', user=user, tdlist=tdlist, quote=daily_quote)
 
 
 @app.route('/organize', methods=["GET"])
@@ -171,4 +194,6 @@ def create_task():
 
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    schedule.add_job(id="Quote", func=choose_quote, trigger="cron", day_of_week="mon,tue,wed,thu,fri,sat,sun", hour=1, minute=00)
+    schedule.start()
+    app.run(debug=True, use_reloader=False)

@@ -4,13 +4,6 @@
         "Name": "Muhammad Shafeeq",
         "Password": "Muhammad",
         "tdList": {
-            "Finish the journal": {
-                "id": 5220532170,
-                "primaryKey": 1,
-                "Status": "complete",
-                "timeCreation": "2023-08-24T04:47:14.914990",
-                "endTime": "2023-08-25T04:47:14.914990"
-            },
             "Tutorials": {
                 "id": 7890888235,
                 "primaryKey": 3,
@@ -28,7 +21,7 @@
             "Daily Quote": {
                 "id": 8520800476,
                 "primaryKey": 4,
-                "Status": "incomplete",
+                "Status": "delayed",
                 "timeCreation": "2023-08-24T09:32:51.516513",
                 "endTime": "2023-08-25T09:32:51.516513"
             }

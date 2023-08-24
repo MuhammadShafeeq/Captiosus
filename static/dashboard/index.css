@@ -64,3 +64,19 @@
 #to-do-list .to-do-list .todo-container .to-do-ul .delayed {
     border-left: 7px rgb(228, 175, 0) solid;
 }
+#daily-motivation {
+    margin-top: 30px;
+    display: grid;
+    grid-auto-flow: column;
+    grid-gap: 20px;
+}
+#daily-motivation .daily-quote {
+    background: #fff;
+    padding: 10px;
+    border-radius: 30px;
+}
+#daily-motivation .daily-video {
+    background: #fff;
+    padding: 30px;
+    border-radius: 30px;
+}

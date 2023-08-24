@@ -4,7 +4,23 @@
 {% endblock %}
 {% block op1 %}active{% endblock%}
 {% block body %}
-<section id=""></section>
+<section id="daily-motivation">
+    <div class="daily-quote">
+        <div class="heading">
+            <h2>Daily Quote</h2>
+        </div>
+        <div class="quote">
+            <span id="quote">{{ quote["Quote"] }}</span>
+        </div>
+        <div class="author">
+            <span id="author">{{ quote["Author"] }}</span>
+        </div>
+    </div>
+    <div class="daily-video">
+        <h2>Motivational Video</h2>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/MxZyUxK64RY?si=jXIcVsiJc7IjI7dH&amp;controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    </div>
+</section>
 {% if tdlist != {} %}
 <section id="to-do-list">
     <div class="to-do-list">
