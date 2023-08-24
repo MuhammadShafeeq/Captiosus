@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@600&display=swap');
+
+#journal {
+    display: flex;
+    flex-direction: column-reverse;
+}
+#journal .journal-day {
+    margin-top: 10px;    
+    background: white;
+    padding: 30px;
+    border-radius: 30px;
+}
+#journal .journal-day .heading {
+    font-size: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    font-family: 'poppins', sans-serif;
+}
+#journal .first{
+    margin-top: 20px;
+}

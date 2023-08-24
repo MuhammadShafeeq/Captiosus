@@ -7,21 +7,14 @@
             "Finish the journal": {
                 "id": 5220532170,
                 "primaryKey": 1,
-                "Status": "delayed",
+                "Status": "complete",
                 "timeCreation": "2023-08-24T04:47:14.914990",
                 "endTime": "2023-08-25T04:47:14.914990"
-            },
-            "Daily Quotes": {
-                "id": 4818663067,
-                "primaryKey": 2,
-                "Status": "incomplete",
-                "timeCreation": "2023-08-24T04:47:22.640450",
-                "endTime": "2023-08-25T04:47:22.640450"
             },
             "Tutorials": {
                 "id": 7890888235,
                 "primaryKey": 3,
-                "Status": "incomplete",
+                "Status": "delayed",
                 "timeCreation": "2023-08-24T04:47:37.286537",
                 "endTime": "2023-08-25T04:47:37.286537"
             },
@@ -31,6 +24,13 @@
                 "Status": "incomplete",
                 "timeCreation": "2023-08-24T04:48:10.525475",
                 "endTime": "2023-08-25T04:48:10.525475"
+            },
+            "Daily Quote": {
+                "id": 8520800476,
+                "primaryKey": 4,
+                "Status": "incomplete",
+                "timeCreation": "2023-08-24T09:32:51.516513",
+                "endTime": "2023-08-25T09:32:51.516513"
             }
         },
         "journal": {

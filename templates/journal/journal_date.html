@@ -1,34 +1,27 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <style>
-    body {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-    }
-    .border {
-        width: 1000px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-direction: column;
-        border: 1px solid black;
-        border-radius: 3px;
-        margin: 10px;
-    }
-    </style>
-    <meta charset="UTF-8">
-    <title>Journal Entries: {{ day }}</title>
-</head>
-<body>
-    {% for i in date %}
-        <div class="border flexed">
-            <h1>{{ i }}</h1>
-            <h4>{{ date[i]["entry"] }}</h4>
-        </div>
-    {% endfor %}
-    <a href="{{ url_for('create_entry', user=session['User']['Username']) }}"><button>Create Entry</button></a>
-</body>
-</html>
+{% extends 'btemplate/base.html' %}
+{% block page_title %}{{ day }} Entries : Captiosus{% endblock %}
+{% block title %}Journal Entry{% endblock %}
+{% block path1 %}<a href="/journal">Journal</a>{% endblock%}
+{% block path2 %}Entry{% endblock%}
+{% block links %}
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon">
+    <link rel="stylesheet" href="{{ url_for('static', filename='journal/page.css') }}">
+{% endblock %}
+{% block op2 %}active{% endblock%}
+{% block body %}
+    <section id="journal">
+        {% for i in date %}
+            <div class="journal-day">
+                <div class="heading">
+                    <h1 id="title">{{ i }}</h1>
+                </div>
+                <div class="journal-body">
+                    <p id="text-body">{{ date[i]["entry"] }}</p>
+                </div>
+            </div>
+        {% endfor %}
+    </section>
+{% endblock %}
+{% block js %}
+    <script src="{{ url_for('static', filename='journal/page.js') }}"></script>
+{% endblock %}
