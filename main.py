@@ -185,6 +185,13 @@ def create_entry():
         return render_template("journal/create.html")
 
 
+@app.route('/coming_soon')
+def coming_soon():
+    if "User" in session:
+        return render_template('coming_soon.html')
+    else:
+        return redirect(url_for('login'))
+
 @app.route('/create', methods=["POST"])
 def create_task():
     data = request.json
@@ -196,4 +203,4 @@ def create_task():
 if __name__ == '__main__':
     schedule.add_job(id="Quote", func=choose_quote, trigger="cron", day_of_week="mon,tue,wed,thu,fri,sat,sun", hour=1, minute=00)
     schedule.start()
-    app.run(debug=True, use_reloader=False)
+    app.run(debug=True, host="0.0.0.0", use_reloader=False)

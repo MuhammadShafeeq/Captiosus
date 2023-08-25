@@ -1,0 +1,21 @@
+{% extends 'btemplate/base.html' %}
+{% block page_title %}Still in development - Captiosus{% endblock %}
+{% block title %}Coming Soon{% endblock %}
+{% block path2 %}Coming Soon{% endblock %}
+{% block path1 %}<a href="">Home</a>{% endblock %}
+{% block links %}
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon">
+    <link rel="stylesheet" href="{{ url_for('static', filename='c_style.css') }}">
+{% endblock %}
+{% block body %}
+<section id="coming_soon">
+    <div class="coming_soon">
+        <div class="logo">
+            <i class='bx bx-time-five' ></i>
+        </div>
+        <div class="content-coming-soon">
+            <h1>This feature will be coming soon</h1>
+        </div>
+    </div>
+</section>
+{% endblock %}  

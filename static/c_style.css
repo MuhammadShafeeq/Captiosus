@@ -1,0 +1,17 @@
+#coming_soon {
+    height: 50vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#coming_soon .coming_soon {
+    display: grid;
+    gap: 10px;
+    font-family: 'montserrat';
+}
+#coming_soon .coming_soon .logo {
+    display: flex;
+    align-items: center;
+    font-size: 25px;
+    justify-content: center;
+}

@@ -17,13 +17,6 @@
                 "Status": "incomplete",
                 "timeCreation": "2023-08-24T04:48:10.525475",
                 "endTime": "2023-08-25T04:48:10.525475"
-            },
-            "Daily Quote": {
-                "id": 8520800476,
-                "primaryKey": 4,
-                "Status": "delayed",
-                "timeCreation": "2023-08-24T09:32:51.516513",
-                "endTime": "2023-08-25T09:32:51.516513"
             }
         },
         "journal": {

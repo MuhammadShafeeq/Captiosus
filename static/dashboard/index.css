@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300&display=swap');
+
 .bx-x {
     color: rgb(228, 0, 0);
     cursor: pointer;
@@ -72,11 +74,34 @@
 }
 #daily-motivation .daily-quote {
     background: #fff;
-    padding: 10px;
+    padding: 30px;
     border-radius: 30px;
+}
+#daily-motivation .daily-quote .quote {
+    margin-top: 40px;
+    font-family: 'Roboto Mono', monospace;
+}
+#daily-motivation .daily-quote .author {
+    position: relative;
+    left: 80%;
+    font-family: 'montserrat';
+    font-weight: 700;
+    top: 30px;
 }
 #daily-motivation .daily-video {
     background: #fff;
     padding: 30px;
     border-radius: 30px;
+}
+#youtube-vid {
+    margin-top: 10px;
+}
+
+@media screen and (max-width: 500px) {
+    #daily-motivation {
+        grid-auto-flow: row;
+    }
+    #daily-motivation .daily-quote, .daily-video {
+        width: 300px;
+    }
 }
