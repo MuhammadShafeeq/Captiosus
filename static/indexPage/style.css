@@ -206,6 +206,9 @@ span {
     flex-direction: row;
 }
 .image-side {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     height: 100%;
     width: 30%;
     border-right: 1px solid #d1d9e6;
