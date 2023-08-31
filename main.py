@@ -201,6 +201,6 @@ def create_task():
 
 
 if __name__ == '__main__':
-    schedule.add_job(id="Quote", func=choose_quote, trigger="cron", day_of_week="mon,tue,wed,thu,fri,sat,sun", hour=1, minute=00)
+    schedule.add_job(id="Quote", func=choose_quote, trigger="interval", hours=12)
     schedule.start()
     app.run(debug=True, host="0.0.0.0", use_reloader=False)
