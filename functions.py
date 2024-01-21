@@ -61,6 +61,8 @@ class Functions:
             users[username]["journal"] = {}
             with open('data.json', 'w') as f:
                 json.dump(users, f, indent=4)
+
+    @staticmethod
     def check_username(username):
         with open('data.json', 'r') as f:
             users = json.load(f)
@@ -69,6 +71,7 @@ class Functions:
         else:
             return True
 
+    @staticmethod
     def check_creds_for_login(username, password):
         with open('data.json', 'r') as f:
             users = json.load(f)
@@ -80,12 +83,14 @@ class Functions:
         else:
             return False
 
+    @staticmethod
     def get_user(username):
         with open('data.json', 'r') as f:
             users = json.load(f)
         user = users[username]
         return user
 
+    @staticmethod
     def create_task(username, taskName):
         timeCreation = datetime.utcnow()
         with open('data.json', 'r') as f:
@@ -119,6 +124,7 @@ class Functions:
         with open('data.json', 'w') as f:
             json.dump(users, f, default=default, indent=4)
 
+    @staticmethod
     def remove_task(username, taskId):
         with open('data.json', 'r') as f:
             users = json.load(f)
@@ -131,6 +137,7 @@ class Functions:
         with open('data.json', 'w') as f:
             json.dump(users, f, indent=4)
 
+    @staticmethod
     def remove_user(username):
         with open('data.json', 'r') as f:
             users = json.load(f)
@@ -139,6 +146,7 @@ class Functions:
         with open('data.json', 'w') as f:
             json.dump(users, f, indent=4)
 
+    @staticmethod
     def get_task_by_name(username, taskName):
         with open('data.json', 'r') as f:
             users = json.load(f)
@@ -146,6 +154,7 @@ class Functions:
         task = users[username]["tdList"][taskName]
         return task
 
+    @staticmethod
     def get_task(username, taskId):
         with open('data.json', 'r') as f:
             users = json.load(f)
@@ -156,6 +165,7 @@ class Functions:
                 break
         return task
 
+    @staticmethod
     def update_status(username, taskId, choice):
         with open('data.json', 'r') as f:
             users = json.load(f)
@@ -173,6 +183,7 @@ class Functions:
         with open('data.json', 'w') as f:
             json.dump(users, f, indent=4)
 
+    @staticmethod
     def get_tdlist(username):
         with open('data.json', 'r') as f:
             users = json.load(f)
@@ -182,7 +193,7 @@ class Functions:
         else:
             return False
 
-
+    @staticmethod
     def get_journal_date(username, date):
         with open('data.json', 'r') as f:
             users = json.load(f)
@@ -195,6 +206,7 @@ class Functions:
         else:
             return False
 
+    @staticmethod
     def create_journal_entry(username, entry, title):
         username = username["Username"].lower()
         date_creation = datetime.today().date()
