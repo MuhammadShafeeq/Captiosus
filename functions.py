@@ -46,6 +46,8 @@ def date_convert(date):
 class Functions:
     def __init__(self):
         return
+
+    @staticmethod
     def register(username, password, name):
         username = username.lower()
         with open('data.json', 'r') as f:
